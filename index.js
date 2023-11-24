@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -9,9 +8,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const connect = async () => {
-  await mongoose.connect(process.env.MONGO_DB).then(() => {
-    console.log("connected to db");
-  });
+  await mongoose
+    .connect(
+      "mongodb+srv://Ebishu:Yoniab23@cluster0.vx1dviu.mongodb.net/dailyTasks?retryWrites=true&w=majority"
+    )
+    .then(() => {
+      console.log("connected to db");
+    });
 };
 
 connect();
