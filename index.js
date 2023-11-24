@@ -10,7 +10,8 @@ app.use(cors());
 const connect = async () => {
   await mongoose
     .connect(
-      "mongodb+srv://Ebishu:Yoniab23@cluster0.vx1dviu.mongodb.net/dailyTasks?retryWrites=true&w=majority"
+      "mongodb+srv://Ebishu:Yoniab23@cluster0.vx1dviu.mongodb.net/dailyTasks?retryWrites=true&w=majority",
+      { useNewUrlParser: true }
     )
     .then(() => {
       console.log("connected to db");
